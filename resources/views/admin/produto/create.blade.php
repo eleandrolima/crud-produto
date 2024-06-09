@@ -7,7 +7,7 @@
 </head>
 <body>
 
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
 <div class="container">
@@ -16,19 +16,19 @@
         @csrf
         <div class="form-group">
             <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <input type="text" class="form-control" id="nome" name="nome" required>
         </div>
         <div class="form-group">
-            <label for="description">Descrição</label>
-            <textarea class="form-control" id="description" name="description"></textarea>
+            <label for="descricao">Descrição</label>
+            <textarea class="form-control" id="descricao" name="descricao"></textarea>
         </div>
         <div class="form-group">
             <label for="quantidade">Quantidade</label>
-            <textarea class="form-control" id="description" name="quantidade"></textarea>
+            <textarea class="form-control" id="quantidade" name="quantidade"></textarea>
         </div>
         <div class="form-group">
-            <label for="price">Preço</label>
-            <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+            <label for="preco">Preço</label>
+            <input type="number" step="0.01" class="form-control" id="preco" name="preco" required>
         </div>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>

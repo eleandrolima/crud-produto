@@ -9,10 +9,15 @@ class Produto extends Model
 {
     use HasFactory;
 
+    /**
+     * @var string
+     */
+    protected $table = 'produto';
+
     protected $fillable = [
         'nome', 
-        'descrição', 
+        'descricao', 
         'quantidade',
-        'preço'];
-        
+        'preco'
+    ];
 }

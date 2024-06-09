@@ -1,19 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\ProdutoController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ProdutoController;
-
-Route::resource('produto', ProdutoController::class);
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/produto/{name?}', function ($name = null) {
-    return view('produto', ['produto' =>$name]);
-});
-
-Route::get('/listaproduto/{name?}', function ($name =null){
-    return view('listaproduto', ['lista'=>$name]);
-});
+Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
+Route::get('/produto/create', [ProdutoController::class, 'create'])->name('produto.create');
+Route::post('/produto/store', [ProdutoController::class, 'store'])->name('produto.store');
+Route::get('/produto/show/{id}', [ProdutoController::class, 'show'])->name('produto.show');
+Route::get('/produto/edit/{id}', [ProdutoController::class, 'edit'])->name('produto.edit');
+Route::put('/produto/update/{id}', [ProdutoController::class, 'update'])->name('produto.update');
+Route::delete('/produto/destroy/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
